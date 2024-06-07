@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeks for Geeks Project</title>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+      </script>
+        
+</head>
+<body>
+
+    <p>
+        I am Technical Writer
+    </p>
+
+    <button id="btn">
+        Click Me for changing Text
+    </button>
+  
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+              $('p').load('data.txt') ;
+            });
+          });
+    </script>
+</body>
+</html>
+
+
+
+selector
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--jQuery library included -->
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	
+	<script>
+		$(document).ready(function () {
+	
+			// When the button with ID "colorButton" is 
+			// clicked, set background color of the 
+			// paragraph with ID "para1"
+			$("#colorButton").click(function () {
+				$("#p1").css("background-color", "skyblue");
+			});
+
+			// When the button with ID "hideButton" is 
+			// clicked, hide the paragraph with ID "para2"
+			$("#hideButton").click(function () {
+				$("#p2").hide();
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h2>Id selector</h2>
+
+	<p id="p1">
+		In this peragraph we are changing background.
+	</p>
+	<p id="p2">
+		In 2nd peragraph we are going hide this pera.
+	</p>
+
+	<!-- Button to change background 
+		color of the first paragraph -->
+	<button id="colorButton">
+		Change Background Color
+	</button>
+	<br><br>
+
+	<!-- Button to hide the second paragraph -->
+	<button id="hideButton">
+		Hide Paragraph
+	</button>
+</body>
+
+</html>
+
+
+event
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+
+	<!-- jQuery code to show the working of this method -->
+	<script> 
+		$(document).ready(function () { 
+			$("p").click(); 
+		}); 
+	</script> 
+
+	<style> 
+		p { 
+			display: block; 
+			width: 300px; 
+			padding: 20px; 
+			font-size: 30px; 
+			border: 2px solid green; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	<center> 
+		<!-- click on this method -->
+		<p onclick="alert('paragraph was clicked')"> 
+			Geeksforgeeks. 
+		</p> 
+	</center> 
+
+</body> 
+
+</html>
+
+
+animate
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+	<!--jQuery code to show animate() method-->
+	<script> 
+		
+			$(document).ready(function () { 
+				$("#b1").click(function () { 
+					$("#box").animate({ 
+						width: "300px" 
+					}); 
+					$("#box").animate({ 
+						height: "300px" 
+					}); 
+				}); 
+			}); 
+	</script> 
+	<style> 
+		div { 
+			width: 100px; 
+			height: 100px; 
+			background-color: green; 
+		} 
+
+		#b1 { 
+			margin-top: 10px; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	<div id="box"></div> 
+	<!-- click on this button -->
+	<button id="b1">Click Here !</button> 
+</body> 
+
+</html>
+
+
+
+addclass
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src=
+"https://code.jquery.com/jquery-1.10.2.js">
+	</script>
+	<title>addClass demo</title>
+	<style>
+		p {
+			margin: 8px;
+			font-size: 35px;
+		}
+
+		.selected {
+			display: block;
+			border: 2px solid green;
+			width: 160px;
+			height: 60px;
+			background-color: lightgreen;
+			padding: 20px;
+		}
+
+		.highlight {
+			background: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<p>GeeksforGeeks</p>
+	<p>gfg</p>
+	<p>CSE</p>
+	<script>
+		$("p").last().addClass("selected");
+	</script>
+</body>
+
+</html>
+
+
+
+ajax
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		jQuery ajax() Method
+	</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<script>
+		$(document).ready(function () {
+			$("li:parent").css("background-color", "green");
+		});
+	</script>
+</head>
+
+<body style="text-align:center;">
+
+	<h1 style="color:green">
+		GeeksForGeeks
+	</h1>
+
+	<h2>
+		jQuery ajax() Method
+	</h2>
+
+	<h3 id="h11"></h3>
+
+	<button>Click</button>
+
+	<!-- Script to use ajax() method to
+		add text content -->
+	<script>
+		$(document).ready(function () {
+			$("button").click(function () {
+				$.ajax({
+					url: "geeks.txt",
+					success: function (result) {
+						$("#h11").html(result);
+					}
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>

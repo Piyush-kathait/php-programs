@@ -23,7 +23,7 @@
     $conn = mysqli_connect("localhost", "root", "", "exam");
     if (!$conn) echo mysqli_connect_error($conn);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST['uname'];
         $age = $_POST['age'];
         $sql = "insert into Student(name,age) values(?,?)";
