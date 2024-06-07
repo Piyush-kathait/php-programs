@@ -1,8 +1,14 @@
 <?php
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Database credentials
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "test";
+$dbname = "exam";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -12,26 +18,22 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connection was successful\n";
+// SQL query to create the table
+$sql = "CREATE TABLE Student (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20),
+    age INT
+)";
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect and sanitize form data
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $age = mysqli_real_escape_string($conn, $_POST['age']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-    
-    // Insert data into the database
-    $sql = "INSERT INTO first (name, email, age, gender) VALUES ('$name', '$email', '$age', '$gender')";
-    
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully\n";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+// Execute the query
+$result = mysqli_query($conn, $sql);
+
+// Check the result and provide feedback
+if ($result) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
 }
 
-// Close connection
+// Close the connection
 mysqli_close($conn);
-?>
