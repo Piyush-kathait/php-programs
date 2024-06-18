@@ -9,19 +9,19 @@
 
 <body>
     <form action="test.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
+        <label for="pizza">Pizzass</label>
+        <input type="number" name="pizza" id="pizza">
+        <input type="submit" value="ORDER">
 
-        <label for="password">password:</label>
-        <input type="text" name="password" id="password">
-
-        <input type="submit" value="log-in">
 
     </form>
     <?php
-    echo $_POST["username"] . "<br>";
-    echo $_POST["password"];
-
+    $total = null;
+    $quantity = $_POST["pizza"];
+    $cost = 2.99;
+    $total = $quantity * $cost;
+    echo "nigga you wanna eat {$quantity} pizzas???";
+    echo "<br> so your total cost will be \${$total}";
     ?>
 </body>
 
