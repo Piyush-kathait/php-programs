@@ -14,8 +14,8 @@ if (!$conn) {
 
 echo "Connection was successful\n";
 
-$sql = "CREATE TABLE `first` (`name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `age` INT(50) NOT NULL , `gender` VARCHAR(255) NOT NULL );
-";
+$sql = "CREATE TABLE `first` (`name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL ,
+                              `age` INT(50) NOT NULL , `gender` VARCHAR(255) NOT NULL );";
 $result = mysqli_query($conn, $sql);
 if ($result) {
     echo "success\n";
